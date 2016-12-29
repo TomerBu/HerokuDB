@@ -29,7 +29,7 @@ router.get('/movies', function (req, res) {
 
 
 router.get('/initDB', function (req, res) {
-    res.render('initDB', {get : "Did a get"});
+    res.render('initDB', { get: "Did a get" });
 });
 
 router.post('/initDB', function (req, res) {
@@ -38,11 +38,15 @@ router.post('/initDB', function (req, res) {
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
         client.query(sql, function (err, result) {
             done();
+            console.log('__________________________');
             if (err) {
+                console.err("ERROR!", err);
                 res.render('initDB', { error: err });
             } else {
+                console.info("Result", result);
                 res.render('initDB', { result: result });
             }
+            console.log('__________________________');
         });
     })
     res.render('initDB', {});
