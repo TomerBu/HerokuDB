@@ -38,12 +38,12 @@ router.post('/initDB', function (req, res) {
     console.log('__________________________');
     console.log(sql);
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
-        if (err) res.render('error', { error: err, messaeg: "Connection Failed" });
+        if (err) { console.error("ERROR!", err); res.render('error', { error: err, messaeg: "Connection Failed" }); }
         client.query(sql, function (err, result) {
             done();
 
             if (err) {
-                console.err("ERROR!", err);
+                console.error("ERROR!", err);
                 res.render('error', { error: err, messaeg: "Query Failed " + sql });
             } else {
                 console.info("Result", result.rows);
