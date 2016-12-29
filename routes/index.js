@@ -45,8 +45,8 @@ router.post('/initDB', function (req, res) {
                 console.err("ERROR!", err);
                 res.render('initDB', { error: err });
             } else {
-                console.info("Result", result);
-                res.render('initDB', { result: result });
+                console.info("Result", result.rows);
+                res.render('initDB', { result: result.rows });
             }
             console.log('__________________________');
         });

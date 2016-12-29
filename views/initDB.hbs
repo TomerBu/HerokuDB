@@ -14,7 +14,14 @@
 {{/if}} 
 
 {{#if result}} 
-    {{result}}
+<ul>
+    {{#each result}}
+    <li>
+        {{result.id}}
+        {{result.mission}}
+    </li>
+    {{/each}}
+</ul>
 {{/if}}
  
 {{#if get}}
