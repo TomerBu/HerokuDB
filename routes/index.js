@@ -35,10 +35,12 @@ router.get('/initDB', function (req, res) {
 router.post('/initDB', function (req, res) {
     var pg = require('pg');
     var sql = req.body.sql;
+    console.log('__________________________');
+    console.log(sql);
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
         client.query(sql, function (err, result) {
             done();
-            console.log('__________________________');
+            
             if (err) {
                 console.err("ERROR!", err);
                 res.render('initDB', { error: err });
