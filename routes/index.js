@@ -32,6 +32,19 @@ router.get('/initDB', function (req, res) {
     res.render('initDB', { get: "Did a get" });
 });
 
+router.get('/todos', function (req, res) {
+    var pg = require('pg');
+    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+        if (err) res.render('error', { error: err });
+        client.query("SELECT * FROM TODOS;", function (err, result) {
+            if (err) res.render('error', { error: err });
+            else {
+                res.render('todos', {todos:result.rows});
+            }
+        })
+    });
+});
+
 router.post('/initDB', function (req, res) {
     var pg = require('pg');
     var sql = req.body.sql;
