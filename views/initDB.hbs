@@ -1,0 +1,13 @@
+<form action="initDB" method="POST" role="form">
+    <legend>Initialise the database</legend>
+
+    <div class="form-group">
+        <label for="sql">Query</label>
+        <input type="text" class="form-control" id="sql" name="sql" placeholder="SQL Query">
+    </div>
+
+    <button type="submit" class="btn btn-block btn-primary">Submit</button>
+</form>
+
+{{#if error}} {{error}} {{/if}}
+{{#if result}} {{error}} {{/if}}

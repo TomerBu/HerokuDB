@@ -28,7 +28,25 @@ router.get('/movies', function (req, res) {
 });
 
 
+router.get('/initDB', function (req, res) {
+    res.render('initDB', {});
+});
 
+router.post('/initDB', function (req, res) {
+    var pg = require('pg');
+    var sql = req.body.sql;
+    pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+        client.query(sql, function (err, result) {
+            done();
+            if (err) {
+                res.render('initDB', { error: err });
+            } else {
+                res.render('initDB', { result: result });
+            }
+        });
+    })
+    res.render('initDB', {});
+});
 
 router.get('/movie/:idx', (req, res) => {
     var http = require('http');
