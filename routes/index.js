@@ -38,12 +38,13 @@ router.post('/initDB', function (req, res) {
     console.log('__________________________');
     console.log(sql);
     pg.connect(process.env.DATABASE_URL, function (err, client, done) {
+        if (err) res.render('error', { error: err, messaeg: "Connection Failed" });
         client.query(sql, function (err, result) {
             done();
-            
+
             if (err) {
                 console.err("ERROR!", err);
-                res.render('initDB', { error: err });
+                res.render('error', { error: err, messaeg: "Query Failed " + sql });
             } else {
                 console.info("Result", result.rows);
                 res.render('initDB', { result: result.rows });
@@ -51,7 +52,7 @@ router.post('/initDB', function (req, res) {
             console.log('__________________________');
         });
     })
-    res.render('initDB', {});
+
 });
 
 router.get('/movie/:idx', (req, res) => {
