@@ -1,0 +1,25 @@
+<div class="page-header">
+    <h1>Movies Page <small>Hackeru</small></h1>
+</div>
+{{!--Erez ninio :) \{{ {{movies.[1].title}} {{movies.[2].title}} {{movies.[3].title}}--}}
+<div class="container-fluid">
+    <div class="list-group">
+        {{#each movies}}
+        <a href="movie/{{@index}}" class="list-group-item">
+            <div class="row">
+                <img src="{{image}}" class="col-xs-6 col-sm-2 col-md-2 col-lg-2" style="border-radius: 20px" alt="">
+                <div class="col-xs-6 col-sm-10 col-md-10 col-lg-10">
+                    <div class="row">
+                        <h2 style="margin: 0;" class="col-xs-10 col-sm-10 col-md-10 col-lg-10"> {{title}} </h2>
+                        <p style="padding:9px 28px;" class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> A growing nation of genetically evolved apes led by Caesar is threatened by a band of human survivors
+                            of the devastating virus unleashed a decade earlier. They reach a fragile peace, but it proves
+                            short-lived, as both sides are brought to the brink of a war that will determine who will emerge
+                            as Earth's dominant species.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+</div>
