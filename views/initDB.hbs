@@ -9,5 +9,8 @@
     <button type="submit" class="btn btn-block btn-primary">Submit</button>
 </form>
 
-{{#if error}} {{error}} {{/if}}
-{{#if result}} {{error}} {{/if}}
+{{#if error}} {{error}} {{/if}} {{#if result}} {{error}} {{/if}} {{#if get}}
+<div class="well">
+    Did a get
+</div>
+{{/if}}

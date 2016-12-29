@@ -29,7 +29,7 @@ router.get('/movies', function (req, res) {
 
 
 router.get('/initDB', function (req, res) {
-    res.render('initDB', {});
+    res.render('initDB', {get : "Did a get"});
 });
 
 router.post('/initDB', function (req, res) {
