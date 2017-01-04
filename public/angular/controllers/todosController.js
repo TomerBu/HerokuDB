@@ -1,6 +1,6 @@
 (function () {
     //get a reference to a module, not using global variables here with anonimous functions
-    var app = angular.module('todoApp');
+    var app = angular.module('todosApp');
 
     //A controller is just a function. (The $scope is injected by angular at runtime)
     var todosController = function ($scope) {
@@ -33,5 +33,5 @@
     //protection from code minifiers:
     todosController.$inject = ['$scope'];
 
-    app.controller('TodoListController', todosController);
+    app.controller('todosController', todosController);
 })();
