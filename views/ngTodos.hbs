@@ -1,5 +1,13 @@
 <script src="/angular/controllers/todosController.js"></script>
 
 <div class="container" ng-app="todosApp" ng-controller="todosController">
-    {[{todos[0].mission}]}
+    {{!--{[{todos[0].mission}]}--}}
+    
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="todo in todos">
+            <span class="badge">{[{todo.done}]}</span>
+            <p ng-bind="todo.mission"></p>
+        </li>
+    </ul>
+    
 </div>
