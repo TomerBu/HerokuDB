@@ -1,11 +1,5 @@
 <script src="/angular/controllers/todosController.js"></script>
-<div class="container-fluid" ng-app="todosApp" ng-controller="todosController">
-    <input type="text" ng-model="name">{[{name}]}
-    <div ng-repeat="todo in todoList">
-        {[{todo.text}]} {{!--Alternative syntax--}}
-        <span ng-bind="todo.done"></span>
-    </div>
-    
+<div class="container-fluid">
     <div class="page-header">
         <h1>Movies Page <small>Hackeru</small></h1>
     </div>

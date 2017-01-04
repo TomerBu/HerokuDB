@@ -5,14 +5,9 @@
     //A controller is just a function. (The $scope is injected by angular at runtime)
     var todosController = function ($scope) {
         $scope.todos = [
-            { text: 'learn angular', done: true },
-            { text: 'build an angular app', done: false }
+            { mission: 'learn angular', done: true },
+            { mission: 'build an angular app', done: false }
         ];
-
-        $scope.todos.addTodo = function () {
-            $scope.todos.push({ text: todoList.todoText, done: false });
-            $scope.todoText = '';
-        };
 
         $scope.todos.remaining = function () {
             var count = 0;
