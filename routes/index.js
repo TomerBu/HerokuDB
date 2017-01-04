@@ -7,7 +7,6 @@ var https = require('https');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
-    angular.module('app', )
 });
 
 router.get('/movies', function (req, res) {
