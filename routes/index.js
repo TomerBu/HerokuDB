@@ -7,6 +7,7 @@ var https = require('https');
 /* GET home page. */
 router.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
+    angular.module('app', )
 });
 
 router.get('/movies', function (req, res) {
@@ -23,7 +24,8 @@ router.get('/movies', function (req, res) {
         });
         response.on('error', function (e) {
             res.redirect('error', e);
-        })
+        });
+        
     });
 });
 
@@ -90,6 +92,7 @@ router.get('/movie/:idx', (req, res) => {
 
 
 router.post('/addUser', function (req, res) {
+    
     var name = req.body.userName;
     //add uesr to data base.
     res.redirect('movies');
