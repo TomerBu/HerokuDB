@@ -32,7 +32,7 @@ router.get('/movies', function (req, res) {
     });
 });
 
-router.get('ngTodos', function (req, res, next) {
+router.get('/ngTodos', function (req, res, next) {
     res.render('ngTodos', {
         title: "ngTodos"
     });
