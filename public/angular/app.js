@@ -8,7 +8,7 @@
             controller: 'todosController',
             templateUrl: 'angular/views/todos.html'
         })
-        $routeProvider.when('/orders', {
+        $routeProvider.when('/orders/:todoId?', {
                 controller: 'ordersController',
                 templateUrl: 'angular/views/orders.html'
             })
