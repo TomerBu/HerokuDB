@@ -5,6 +5,7 @@
   },
   "dependencies": {
     "angular": "registry:dt/angular#1.5.0+20161220143421",
+    "angular-route": "registry:dt/angular-route#1.3.0+20161206185711",
     "express": "registry:dt/express#4.0.0+20161115070701"
   }
 }
