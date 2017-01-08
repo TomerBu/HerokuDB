@@ -4,7 +4,7 @@
 </div>
 <ul class="list-group">
     <li class="list-group-item" ng-repeat="todo in todos | filter:todosFilter">
-        <span class="badge">{[{todo.done}]}</span>
+        <span class="badge">{{todo.done}}</span>
         <p ng-bind="todo.mission | uppercase"></p>
     </li>
 </ul>
