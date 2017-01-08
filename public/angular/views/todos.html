@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label class="sr-only" for="filter">Search:</label>
+    <input type="text" class="form-control" ng-model="todosFilter.mission" id="filter" placeholder="Search...">
+</div>
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="todo in todos | filter:todosFilter">
+        <span class="badge">{[{todo.done}]}</span>
+        <p ng-bind="todo.mission | uppercase"></p>
+    </li>
+</ul>

@@ -33,9 +33,10 @@ router.get('/movies', function (req, res) {
 });
 
 router.get('/ngTodos', function (req, res, next) {
-    res.render('ngTodos', {
-        title: "ngTodos"
-    });
+    // res.sendFile(__dirname +'/../public/angular/views/index.html');
+    res.sendFile('index.html', {root: './public/angular/views/'});
+
+
 });
 
 router.get('/initDB', function (req, res) {
